@@ -1,5 +1,4 @@
 import xarray as xr
-import pandas as pd
 
 def import_era5(file_path='', var=''):
     ''' This function imports ERA5 gridded data and returns the data for a specific variable.
@@ -10,19 +9,10 @@ def import_era5(file_path='', var=''):
     
     Outputs:
     da -- the DataArray of the data from the variable of interest.
-    (yr)
+    yr -- the DataArray of the time variable.
     '''
     ds = xr.open_dataset(file_path)
     da = ds[var]
     yr = ds['valid_time']
 
     return da, yr
-
-def import_as_csv(filepath='', outpath='', var=''):
-    ds = xr.open_dataset(filepath)
-    ds.to_dataframe().to_csv(outpath)
-    df = pd.read_csv(outpath)
-    df_data = df[var]
-    df_yr = df['valid_time']
-
-    return df_data, df_yr
