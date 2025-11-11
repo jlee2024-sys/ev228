@@ -4,6 +4,7 @@ import scipy.stats as stats
 import fun_import_era5 as imp
 import fun_plot_era5 as plotter
 
+#All datasets are netCDFs from ERA5's database.
 filepath = '/Users/julienlee/Documents/ev228_data/'
 wave_fn = 'era5_wave_height_1960-2025.nc'
 temp_fn = 'era5_ocean_surface_temp_1960-2025.nc'
@@ -47,8 +48,8 @@ da_10mwstimemn = da_10mws.mean('valid_time')
 #Maps of significant wave height, surface temperature, and wind speeds.
 plotter.map(da_swhtimemn, title='ERA5 Mean Significant Wave Height (swh), 1940-2025',
            cblabel='meters', out_path='/Users/julienlee/Documents/plots/', out_name='wave_plot.png')
-plotter.map(da_ssttimemn, title='ERA5 Mean Surface Temperature (deg C), 1960-2025',
-           cblabel='deg C', out_path='/Users/julienlee/Documents/plots/', out_name='temp_plot.png')
+plotter.map(da_ssttimemn, title='ERA5 Mean Surface Temperature (°C), 1960-2025',
+           cblabel='°C', out_path='/Users/julienlee/Documents/plots/', out_name='temp_plot.png')
 plotter.map(da_10mwstimemn, title='ERA5 10m Wind Speed (m/s), 1960-2025',
            cblabel='m/s', out_path='/Users/julienlee/Documents/plots/', out_name='wind_plot.png')
 

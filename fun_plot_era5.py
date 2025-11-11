@@ -24,7 +24,7 @@ def map(in_da, title='', cblabel='', out_path='', out_name=''):
     plt.title(title)
     cb = plt.colorbar(image, shrink=.75, orientation="vertical", pad=.02)
     cb.set_label(cblabel)
-    plt.savefig(out_path + out_name, dpi=400)
+    plt.savefig(out_path + out_name)
 
 def graph(x, y, xlab='', ylab='', title='', out_path='', out_name=''):
     ''' This function plots a generic graph (a line graph for this data) given two variables.
@@ -45,7 +45,7 @@ def graph(x, y, xlab='', ylab='', title='', out_path='', out_name=''):
     plt.xlabel(xlab)
     plt.ylabel(ylab)
     plt.title(title)
-    plt.savefig(out_path + out_name, dpi=400)
+    plt.savefig(out_path + out_name)
 
 def regress_graph(x, y, y_int, slope, xlab='', ylab='', title='', out_path='', out_name=''):
     ''' This function plots a generic graph (a line graph for this data) given two variables.
@@ -69,4 +69,4 @@ def regress_graph(x, y, y_int, slope, xlab='', ylab='', title='', out_path='', o
     plt.xlabel(xlab)
     plt.ylabel(ylab)
     plt.title(title)
-    plt.savefig(out_path + out_name, dpi=400)
+    plt.savefig(out_path + out_name)
